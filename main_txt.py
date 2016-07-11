@@ -1,16 +1,21 @@
-arquivo = "/Users/armandocouto/Downloads/Tiago/dadostrabalho.csv"
+arquivo = "dadostrabalho.csv"
 arquivo_open = open(arquivo, 'r')
 cabecalho = arquivo_open.readline()
 frotas = arquivo_open.readlines()
 
 # [2, 3, 4, 6, 8, 11, 12, 15, 16, 27, 99]
-ordem_de_cartoes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-horas = {"00": ordem_de_cartoes, "01": ordem_de_cartoes, "02": ordem_de_cartoes, "03": ordem_de_cartoes,
-         "04": ordem_de_cartoes, "05": ordem_de_cartoes, "06": ordem_de_cartoes, "07": ordem_de_cartoes,
-         "08": ordem_de_cartoes, "09": ordem_de_cartoes, "10": ordem_de_cartoes, "11": ordem_de_cartoes,
-         "12": ordem_de_cartoes, "13": ordem_de_cartoes, "14": ordem_de_cartoes, "15": ordem_de_cartoes,
-         "16": ordem_de_cartoes, "17": ordem_de_cartoes, "18": ordem_de_cartoes, "19": ordem_de_cartoes,
-         "20": ordem_de_cartoes, "21": ordem_de_cartoes, "22": ordem_de_cartoes, "23": ordem_de_cartoes}
+horas = {"00": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "01": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "02": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "03": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "04": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "05": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "06": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "07": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "08": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "09": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "10": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "11": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "12": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "13": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "14": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "15": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "16": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "17": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "18": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "19": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "20": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "21": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "22": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "23": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
 
 for frota_line in frotas:
     aux = frota_line.split(';')
@@ -52,6 +57,8 @@ for frota_line in frotas:
 text_file = open("dados_trabalho.txt", "w")
 text_file.write(
     "Hora   Cartao 2   Cartao 3   Cartao 4   Cartao 6   Cartao 8   Cartao 12   Cartao 15   Cartao 16   Cartao 27   Cartao 99 \n")
+
+ordem_de_cartoes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 for hora in sorted(horas):
     cartoes = horas[hora]
     text_file.write(' ' + str(hora) + '     ' + str(cartoes[0]) + '     ' + str(cartoes[1]) + '     ' + str(cartoes[2]) +
